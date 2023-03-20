@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&Co</title>
+    <link rel="icon" href="images/favicon_1.png">
+    <link rel="stylesheet" href="style_contact2.css">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+
+<!-- NAVIGATOR BAR -->
+<header> 
+  <nav>
+    <div id="background2">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <li><a href="index.html"  id="side2">C&CO</a></li>
+          <li><a href="ecosystem2.html"  id="side3">ECOSYSTEM</a></li>
+          <li><a href="/homepage.html"  id="side4">FOOTPRINTS</a></li>
+          <li><a href="contact2.html"  id="side5">CONTACT</a></li>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div id="nav-bar">
+  <a href="index.html">
+    <img id="logo" src="images/About/Logo GIF 1 (1).gif"width="200vw" height="auto">
+  </a>
+</div>
+</main>
+
+<!-- SECTION -->
+<section id="mainCopy">
+    <div id="title1">
+      <h1>
+        GET IN TOUCH
+      </h1>
+    </div>
+    <div id="text1">
+      <p>SINGAPORE
+        <br>
+        29 Mayo Street #02-01P
+        <br>Singapore 208315
+        <br>+65 9071 0722
+        <br>
+        <br>Mon - Fri, 10am - 6pm
+        <br>
+        <br>CARRIER AND COMPANIES LLP
+      </p>
+    </div>
+</section>
+
+<!-- IMAGES -->
+<section id="allimages">
+</section>
+</div>
+
+
+<!-- SCRIPT -->
+<script>
+      const menu = document.querySelector('.menu')
+      const close = document.querySelector('.close')
+      const nav = document.querySelector('nav')
+
+      menu.addEventListener('click', () => {
+        nav.classList.add('open-nav')
+      })
+      close.addEventListener('click', () => {
+        nav.classList.remove('open-nav')
+      })
+
+// Make the DIV element draggable:
+dragElement(document.getElementById("title1"));
+dragElement(document.getElementById("text1"));
+dragElement(document.getElementById("title2"));
+dragElement(document.getElementById("text2"));
+dragElement(document.getElementById("title3"));
+dragElement(document.getElementById("text3"));
+dragElement(document.getElementById("title4"));
+dragElement(document.getElementById("text4"));
+dragElement(document.getElementById("title5"));
+dragElement(document.getElementById("text5"));
+dragElement(document.getElementById("title6"));
+dragElement(document.getElementById("text6"));
+
+dragElement(document.getElementById("all1"));
+dragElement(document.getElementById("all2"));
+dragElement(document.getElementById("all3"));
+dragElement(document.getElementById("all4"));
+dragElement(document.getElementById("all5"));
+
+dragElement(document.getElementById("psa1"));
+dragElement(document.getElementById("psa2"));
+dragElement(document.getElementById("psa3"));
+
+dragElement(document.getElementById("ishop1"));
+dragElement(document.getElementById("ishop2"));
+dragElement(document.getElementById("ishop3"));
+
+dragElement(document.getElementById("oos1"));
+dragElement(document.getElementById("oos2"));
+dragElement(document.getElementById("oos3"));
+
+dragElement(document.getElementById("nus1"));
+dragElement(document.getElementById("nus2"));
+dragElement(document.getElementById("nus3"));
+dragElement(document.getElementById("nus4"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+      </script>
+ 
+</body>
+</html>

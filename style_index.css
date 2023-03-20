@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'Telegraf';
+    src: url('fonts/Telegraf-Regular.eot');
+    src: url('fonts/Telegraf-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Telegraf-Regular.woff2') format('woff2'),
+        url('fonts/Telegraf-Regular.woff') format('woff'),
+        url('fonts/Telegraf-Regular.ttf') format('truetype'),
+        url('fonts/Telegraf-Regular.svg#Telegraf-Regular') format('svg');
+  }
+  
+  @font-face {
+    font-family: 'Telegraf-bold';
+    src: url('fonts/Telegraf-UltraBold.eot');
+    src: url('fonts/Telegraf-UltraBold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Telegraf-UltraBold.woff2') format('woff2'),
+        url('fonts/Telegraf-UltraBold.woff') format('woff'),
+        url('fonts/Telegraf-UltraBold.ttf') format('truetype'),
+        url('fonts/Telegraf-UltraBold.svg#Telegraf-UltraBold') format('svg');
+  }
+  
+  @font-face {
+    font-family: 'Telegraf-light';
+    src: url('fonts/Telegraf-UltraLight.eot');
+    src: url('fonts/Telegraf-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Telegraf-UltraLight.woff2') format('woff2'),
+        url('fonts/Telegraf-UltraLight.woff') format('woff'),
+        url('fonts/Telegraf-UltraLight.ttf') format('truetype'),
+        url('fonts/Telegraf-UltraLight.svg#Telegraf-UltraLight') format('svg');
+  }
+  
+  @font-face {
+  font-family: 'Playfair';
+  src: url('fonts/Telegraf-UltraLight.eot');
+  src: url('fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  src: url('fonts/PlayfairDisplay-Italic.woff') format('woff');
+  }
+  
+  @font-face {
+  font-family: 'worksans-thin';
+  src: url('fonts/Telegraf-UltraLight.eot');
+  src: url('fonts/WorkSans-Thin.ttf') format('truetype');
+  src: url('fonts/WorkSans-Thin.woff') format('woff');
+  }
+  
+  @font-face {
+  font-family: 'worksans-semibold';
+  src: url('fonts/Telegraf-UltraLight.eot');
+  src: url('fonts/WorkSans-SemiBold.ttf') format('truetype');
+  }
+  
+  @font-face {
+  font-family: 'worksans-regular';
+  src: url('fonts/Telegraf-UltraLight.eot');
+  src: url('fonts/WorkSans-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+  font-family: 'worksans-light';
+  src: url('fonts/Telegraf-UltraLight.eot');
+  src: url('fonts/WorkSans-Light.ttf') format('truetype');
+  }
+  
+  @font-face {
+  font-family: 'worksans-Medium';
+  src: url('fonts/Telegraf-UltraLight.eot');
+  src: url('fonts/WorkSans-Medium.ttf') format('truetype');
+  }
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+main {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+}
+
+.navbar {
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    list-style-type: none;
+  }
+  
+  .navbar a {
+    text-align: center;
+    display: inline-block;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0px auto;
+    z-index: 99;
+  }
+  
+  .navbar a:hover {
+    color: black;
+    z-index: 99;
+  }
+  
+  li {
+    float: left;
+  }
+
+  #logo {
+    color: black;
+    position: fixed;
+    z-index: 80;
+    top: 1.3em;
+    right: 1em;
+    font-size: 1.5em;
+  }
+
+
+#side2 {
+    color: #000000;
+    /* position: fixed; */
+    font-family: 'worksans-semibold';
+    /* font-weight: 100; */
+    font-size: 0.7em;
+    /* top: 22.5em;
+    left: 1.5em; */
+    z-index: 90;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+  }
+  
+  #side2:hover {
+    font-family: 'worksans-semibold';
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #side3 {
+    color: #000000;
+    /* position: fixed; */
+    font-family: 'worksans-light';
+    /* font-weight: 100; */
+    font-size: 0.7em;
+    /* top: 25em;
+    left: 1.5em; */
+    z-index: 90;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+  }
+  
+  #side3:hover {
+    font-family: 'worksans-semibold';
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  #side4 {
+    color: #000000;
+    /* position: fixed; */
+    font-family: 'worksans-light';
+    /* font-weight: 100; */
+    font-size: 0.7em;
+    /* top: 27.5em;
+    left: 1.5em; */
+    z-index: 90;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+  }
+  
+  #side4:hover {
+    font-family: 'worksans-semibold';
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  #side5 {
+    color: #000000;
+    /* position: fixed; */
+    font-family: 'worksans-light';
+    /* font-weight: 100; */
+    font-size: 0.7em;
+    /* top: 30em;
+    left: 1.5em; */
+    z-index: 90;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+  }
+  
+  #side5:hover {
+    font-family: 'worksans-semibold';
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  #video1 {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    #logo {
+      display: none;
+    }
+  }
