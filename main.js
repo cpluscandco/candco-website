@@ -65,7 +65,7 @@ var mesh3;
 // Load a glTF resource
 loader.load(
 	// resource URL
-	'model/Logo.gltf',
+	'./model/Logo.gltf',
 	// called when the resource is loaded
 	function ( gltf ) {
 		mesh3 = gltf.scene
