@@ -43,7 +43,7 @@ var mesh2;
 // Load a glTF resource
 loader.load(
 	// resource URL
-	'model/kube.gltf',
+	'/candco-website/model/kube.gltf',
 	// called when the resource is loaded
 	function ( gltf ) {
 		mesh2 = gltf.scene
