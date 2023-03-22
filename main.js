@@ -119,7 +119,7 @@ let materialBox = new THREE.MeshBasicMaterial( {map: videoTexture} );
 let cube = new THREE.Mesh( geometryBox, materialBox );
 scene.add( cube );
 cube.position.set(0,0,6);
-video.play();
+video.play(cube);
 
 //CAMERA
 camera.position.z = 1;
