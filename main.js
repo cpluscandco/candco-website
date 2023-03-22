@@ -111,7 +111,7 @@ scene.add( plane3 );
 
 // VIDEO
 let video = document.getElementById('video1');
-video.src = "video/showreel.mp4";
+video.src = "/candco-website/video/showreel.mp4";
 
 let videoTexture = new THREE.VideoTexture(video);
 let geometryBox = new THREE.PlaneGeometry( 4,2.25 );
