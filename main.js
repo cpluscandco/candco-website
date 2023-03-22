@@ -14,74 +14,53 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 //OBJECT
-// Instantiate a loader
-const loader = new GLTFLoader();
+let loadedModel1;
+const gltfLoader1 = new GLTFLoader();
+gltfLoader1.load('model/Logo.gltf', (gltfScene1) => {
+	loadedModel1 = gltfScene1;
+	console.log(loadedModel1);
 
-var mesh;
-// Load a glTF resource
-loader.load(
-	// resource URL
-	'model/Seper.gltf',
-	// called when the resource is loaded
-	function ( gltf ) {
-		mesh = gltf.scene
-		scene.add(mesh);
-		mesh.position.set(20,-5,100);
-		mesh.scale.set(30,30,30);
-	},
-	// called while loading is progressing
-	function ( xhr ) {
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-	},
-	// called when loading has errors
-	function ( error ) {
-		console.log( 'An error happened' );
-	}
-);
+	gltfScene1.scene.rotation.y = Math.PI / 8;
+	gltfScene1.scene.position.z = -10;
+	gltfScene1.scene.scale.set(0.35,0.35,0.35);
+	scene.add(gltfScene1.scene);
+})
 
-var mesh2;
-// Load a glTF resource
-loader.load(
-	// resource URL
-	'model/kube.gltf',
-	// called when the resource is loaded
-	function ( gltf ) {
-		mesh2 = gltf.scene
-		scene.add(mesh2);
-		mesh2.position.set(-50,-5,2);
-		mesh2.scale.set(30,30,30);
-	},
-	// called while loading is progressing
-	function ( xhr ) {
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-	},
-	// called when loading has errors
-	function ( error ) {
-		console.log( 'An error happened' );
-	}
-);
+let loadedModel2;
+const gltfLoader2 = new GLTFLoader();
+gltfLoader2.load('model/Kube.gltf', (gltfScene2) => {
+	loadedModel2 = gltfScene2;
+	console.log(loadedModel2);
 
-var mesh3;
-// Load a glTF resource
-loader.load(
-	// resource URL
-	'model/Logo.gltf',
-	// called when the resource is loaded
-	function ( gltf ) {
-		mesh3 = gltf.scene
-		scene.add(mesh3);
-		mesh3.position.set(0,0,-10);
-		mesh3.scale.set(0.3,0.3,0.3);
-	},
-	// called while loading is progressing
-	function ( xhr ) {
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-	},
-	// called when loading has errors
-	function ( error ) {
-		console.log( 'An error happened' );
-	}
-);
+
+	gltfScene2.scene.position.set(-10,-1,30);
+	gltfScene2.scene.scale.set(10,10,10);
+	scene.add(gltfScene2.scene);
+})
+
+let loadedModel3;
+const gltfLoader3 = new GLTFLoader();
+gltfLoader3.load('model/Seper.gltf', (gltfScene3) => {
+	loadedModel3 = gltfScene3;
+	console.log(loadedModel3);
+
+
+	gltfScene3.scene.position.set(17,-1,8);
+	gltfScene3.scene.scale.set(10,10,10);
+	scene.add(gltfScene3.scene);
+})
+
+let loadedModel4;
+const gltfLoader4 = new GLTFLoader();
+gltfLoader4.load('model/Donats.gltf', (gltfScene4) => {
+	loadedModel4 = gltfScene4;
+	console.log(loadedModel4);
+
+
+	gltfScene4.scene.position.set(17,-1,35);
+	gltfScene4.scene.scale.set(10,10,10);
+	scene.add(gltfScene4.scene);
+})
 
 /**
 * Image
@@ -176,18 +155,32 @@ function onMouseWheel(event) {
 
 //ANIMATE
 function animate() {
+	if (loadedModel1) {
+		// loadedModel.scene.rotation.x += 0.01;
+		loadedModel1.scene.rotation.y += 0.004;
+		// loadedModel.scene.rotation.z += 0.01;
+	}
+
+	if (loadedModel2) {
+		// loadedModel.scene.rotation.x += 0.01;
+		loadedModel2.scene.rotation.y += 0.004;
+		loadedModel2.scene.rotation.z += 0.01;
+	}
+
+	if (loadedModel3) {
+		// loadedModel.scene.rotation.x += 0.01;
+		loadedModel3.scene.rotation.y += 0.004;
+		loadedModel3.scene.rotation.z += 0.01;
+	}
+
+	if (loadedModel4) {
+		// loadedModel.scene.rotation.x += 0.01;
+		loadedModel4.scene.rotation.y += 0.004;
+		loadedModel4.scene.rotation.z += 0.01;
+	}
     requestAnimationFrame( animate );
+	renderer.render( scene, camera );
 
-   	mesh.rotation.y += 0.001;
-    mesh2.rotation.y += 0.002;
-    mesh2.rotation.z += 0.006;
-	mesh3.rotation.y += 0.001;
-	
-    controls.update();
-
-	camera.position.y = y
-
-    renderer.render( scene, camera );
 	window.addEventListener( 'resize', onWindowResize );
 }
 
@@ -200,7 +193,7 @@ function onWindowResize() {
 
 	renderer.setSize( window.innerWidth, window.innerHeight );
 
-	render();
+	// render();
 
 }
 
