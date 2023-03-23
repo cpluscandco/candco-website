@@ -66,6 +66,29 @@
   src: url('fonts/WorkSans-Medium.ttf') format('truetype');
   }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #adadad;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
 canvas {
     position: absolute;
     top: 0;
@@ -74,9 +97,6 @@ canvas {
 
 main {
     position: absolute;
-    z-index: 99;
-    top: 0;
-    left: 0;
 }
 
 .navbar {
@@ -203,6 +223,59 @@ main {
   #video1 {
     display: none;
   }
+
+  /* SCRIPT SCROLL */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+:root {
+  --dark-bg: transparent;
+  --spacing: 350px;
+}
+
+
+main {
+  width: 100vw;
+  color: transparent;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+  header {
+    background: var(--dark-bg);
+    margin-bottom: var(--spacing);
+  }
+
+  section {
+    grid-column: 2 / 8;
+    padding: 1rem;
+    background: var(--dark-bg);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+  }
+
+  .left {
+    grid-column: 6 / 12;
+  }
+
+    /* SCRIPT SCROLL */
 
   @media only screen and (max-width: 600px) {
     #logo {
