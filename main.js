@@ -8,7 +8,8 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 
 //RENDERER
 const renderer = new THREE.WebGLRenderer({
-    alpha: true
+    alpha: true,
+	antialiasing: true
 });
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
@@ -33,8 +34,8 @@ gltfLoader2.load('model/Kube.gltf', (gltfScene2) => {
 	console.log(loadedModel2);
 
 
-	gltfScene2.scene.position.set(-10,-1,30);
-	gltfScene2.scene.scale.set(10,10,10);
+	gltfScene2.scene.position.set(-5.8,1,28);
+	gltfScene2.scene.scale.set(4,4,4);
 	scene.add(gltfScene2.scene);
 })
 
@@ -45,7 +46,7 @@ gltfLoader3.load('model/Seper.gltf', (gltfScene3) => {
 	console.log(loadedModel3);
 
 
-	gltfScene3.scene.position.set(17,-1,8);
+	gltfScene3.scene.position.set(20,-1,8);
 	gltfScene3.scene.scale.set(10,10,10);
 	scene.add(gltfScene3.scene);
 })
@@ -57,8 +58,8 @@ gltfLoader4.load('model/Donats.gltf', (gltfScene4) => {
 	console.log(loadedModel4);
 
 
-	gltfScene4.scene.position.set(17,-1,35);
-	gltfScene4.scene.scale.set(10,10,10);
+	gltfScene4.scene.position.set(0,-1.2,33);
+	gltfScene4.scene.scale.set(1,1,1);
 	scene.add(gltfScene4.scene);
 })
 
@@ -119,7 +120,7 @@ let materialBox = new THREE.MeshBasicMaterial( {map: videoTexture} );
 let cube = new THREE.Mesh( geometryBox, materialBox );
 scene.add( cube );
 cube.position.set(0,0,6);
-video.play(cube);
+video.play();
 
 //CAMERA
 camera.position.z = 1;
@@ -152,6 +153,42 @@ function onMouseWheel(event) {
 	y = event.deltaY
 }
 
+//SCROLL ANIMATION
+function moveCamera() {
+	const t = document.body.getBoundingClientRect().top;
+
+	if (loadedModel1) {
+		// loadedModel1.scene.rotation.x += 0.5;
+		loadedModel1.scene.rotation.y += -0.05;
+		// loadedModel.scene.rotation.z += 0.01;
+	}
+
+	if (loadedModel2) {
+		// loadedModel.scene.rotation.x += 0.01;
+		loadedModel2.scene.rotation.y += 0.05;
+		// loadedModel2.scene.rotation.z += 0.05;
+	}
+
+	if (loadedModel3) {
+		// loadedModel.scene.rotation.x += 0.01;
+		loadedModel3.scene.rotation.y += 0.05;
+		// loadedModel3.scene.rotation.z += 0.05;
+	}
+
+	if (loadedModel4) {
+		// loadedModel.scene.rotation.x += 0.01;
+		loadedModel4.scene.rotation.y += 0.05;
+		// loadedModel4.scene.rotation.z += 0.05;
+	}
+  
+	camera.position.z = t * -0.01;
+	// camera.position.x = t * -0.0002;
+	// camera.rotation.y = t * -0.0002;
+  }
+  
+  document.body.onscroll = moveCamera;
+  moveCamera();
+
 
 //ANIMATE
 function animate() {
@@ -176,7 +213,7 @@ function animate() {
 	if (loadedModel4) {
 		// loadedModel.scene.rotation.x += 0.01;
 		loadedModel4.scene.rotation.y += 0.004;
-		loadedModel4.scene.rotation.z += 0.01;
+		loadedModel4.scene.rotation.z += 0.001;
 	}
     requestAnimationFrame( animate );
 	renderer.render( scene, camera );
