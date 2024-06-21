@@ -17,13 +17,16 @@ document.body.appendChild( renderer.domElement );
 //OBJECT
 let loadedModel1;
 const gltfLoader1 = new GLTFLoader();
-gltfLoader1.load('model/Logo.gltf', (gltfScene1) => {
+gltfLoader1.load('model/Donats.gltf', (gltfScene1) => {
 	loadedModel1 = gltfScene1;
 	console.log(loadedModel1);
 
 	gltfScene1.scene.rotation.y = Math.PI / 8;
+	gltfScene1.scene.rotation.x = Math.PI / 8;
 	gltfScene1.scene.position.z = -10;
-	gltfScene1.scene.scale.set(0.35,0.35,0.35);
+	gltfScene1.scene.position.y = -0,9;
+	gltfScene1.scene.position.x = -1;
+	gltfScene1.scene.scale.set(12,12,12);
 	scene.add(gltfScene1.scene);
 })
 
